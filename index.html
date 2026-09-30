@@ -422,7 +422,11 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
 /* footer title block */
 .foot { border-top: 2px solid var(--ink); overflow: hidden; }
 .foot-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-@media (min-width: 820px) { .foot-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; } }
+.foot-grid div:first-child { grid-column: 1 / -1; }
+@media (min-width: 820px) {
+  .foot-grid { grid-template-columns: 1.4fr 1fr 1fr; }
+  .foot-grid div:first-child { grid-column: auto; }
+}
 .foot-grid div { padding: 16px var(--gutter); border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); margin: 0 -1px -1px 0; min-width: 0; }
 .foot-grid .k { color: var(--ink-2); display: block; font-size: 0.6875rem; }
 .foot-grid .v { display: block; font-size: var(--t-xs); letter-spacing: 0.04em; }
@@ -528,7 +532,6 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
   <div class="wrap">
     <p class="markets mono">
       <span>Studio <b>San Francisco Bay Area</b></span>
-      <span>Production <b>Manila</b></span>
       <span>Markets served <b>Philippines · Singapore · Thailand · United States</b></span>
     </p>
   </div>
@@ -766,7 +769,6 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
   <div class="foot-grid mono">
     <div><span class="k">Drawn by</span><span class="v">NHAUS MEDIA, LLC</span></div>
     <div><span class="k">Studio</span><span class="v">San Francisco Bay Area</span></div>
-    <div><span class="k">Production</span><span class="v">Manila</span></div>
     <div><span class="k">Issued</span><span class="v">© 2026 · n-haus.com</span></div>
   </div>
 </footer>
