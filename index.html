@@ -3,454 +3,31 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>NHAUS MEDIA | AI-native production studio</title>
-<meta name="description" content="NHAUS MEDIA is an AI-native production studio making films, key visuals, social content and episodic series for agencies and brands.">
+<title>NHAUS | Business CMA and Production Studio</title>
+<meta name="description" content="NHAUS shows local businesses where they are losing customers, how they compare with competitors, and what to fix first. Also home to the NHAUS Production Studio.">
 <link rel="canonical" href="https://www.n-haus.com/">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="NHAUS MEDIA">
-<meta property="og:title" content="NHAUS MEDIA | AI-native production studio">
-<meta property="og:description" content="NHAUS MEDIA is an AI-native production studio making films, key visuals, social content and episodic series for agencies and brands.">
+<meta property="og:site_name" content="NHAUS">
+<meta property="og:title" content="NHAUS | Business CMA and Production Studio">
+<meta property="og:description" content="NHAUS shows local businesses where they are losing customers, how they compare with competitors, and what to fix first. Also home to the NHAUS Production Studio.">
 <meta property="og:url" content="https://www.n-haus.com/">
 <meta name="theme-color" content="#1A3BDB">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
-<style>
-@font-face { font-family: "Archivo"; src: url("fonts/archivo.woff2") format("woff2"); font-weight: 100 900; font-stretch: 62% 125%; font-style: normal; font-display: swap; }
-@font-face { font-family: "Instrument Sans"; src: url("fonts/instrument-sans.woff2") format("woff2"); font-weight: 400 700; font-style: normal; font-display: swap; }
-@font-face { font-family: "IBM Plex Mono"; src: url("fonts/ibm-plex-mono-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
-@font-face { font-family: "IBM Plex Mono"; src: url("fonts/ibm-plex-mono-500.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
-img { max-width: 100%; }
-[hidden] { display: none !important; }
-
-/* Layout concept: the site is an architect's drawing set for a production house.
-   A cool paper ground, one cyanotype-blue sheet per key moment, frames drawn to scale,
-   a schedule instead of feature cards, a title block instead of a footer. */
-:root {
-  --paper: #F1F3F8;
-  --sheet: #FFFFFF;
-  --ink: #0B1333;
-  --ink-2: #48527A;
-  --rule: #C8CFE3;
-  --accent: #1A3BDB;
-  --band: #1A3BDB;
-  --band-grid: #2B4AE4;
-  --band-line: #9DAEF8;
-  --on-band: #F4F6FF;
-  --on-band-2: #C9D2FA;
-
-  --f-display: "Archivo", "Arial Black", "Helvetica Neue", Arial, sans-serif;
-  --f-body: "Instrument Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --f-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-
-  --t-xs: 0.75rem;
-  --t-sm: 0.875rem;
-  --t-base: 1.0625rem;
-  --t-lg: 1.3125rem;
-  --t-xl: clamp(1.6rem, 1.6vw + 1.1rem, 2.4rem);
-  --t-hero: clamp(2.1rem, 3.6vw + 1rem, 4rem);
-
-  --gutter: clamp(16px, 4vw, 40px);
-  --section: clamp(56px, 8vw, 112px);
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --paper: #080C1E;
-    --sheet: #0E1430;
-    --ink: #E8ECFA;
-    --ink-2: #9AA5CB;
-    --rule: #252F59;
-    --accent: #8CA1FF;
-    --band: #1A3BDB;
-    --band-grid: #2B4AE4;
-    --band-line: #9DAEF8;
-    --on-band: #F4F6FF;
-    --on-band-2: #C9D2FA;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --paper: #080C1E;
-  --sheet: #0E1430;
-  --ink: #E8ECFA;
-  --ink-2: #9AA5CB;
-  --rule: #252F59;
-  --accent: #8CA1FF;
-  --band: #1A3BDB;
-  --band-grid: #2B4AE4;
-  --band-line: #9DAEF8;
-  --on-band: #F4F6FF;
-  --on-band-2: #C9D2FA;
-  color-scheme: dark;
-}
-
-*, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: var(--f-body);
-  font-size: var(--t-base);
-  line-height: 1.55;
-  -webkit-font-smoothing: antialiased;
-}
-a { color: inherit; }
-:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-p { margin: 0; }
-h1, h2, h3 { margin: 0; text-wrap: balance; }
-
-.wrap {
-  max-width: 1240px;
-  margin-inline: auto;
-  padding-inline: var(--gutter);
-}
-
-/* ---------- shared type roles ---------- */
-.mono {
-  font-family: var(--f-mono);
-  font-size: var(--t-xs);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-.display {
-  font-family: var(--f-display);
-  font-stretch: 125%;
-  font-variation-settings: "wdth" 125;
-  font-weight: 800;
-  line-height: 1.02;
-  letter-spacing: -0.015em;
-}
-.eyebrow { color: var(--accent); }
-.lede { font-size: var(--t-lg); line-height: 1.45; max-width: 34em; }
-.muted { color: var(--ink-2); }
-
-/* ---------- header ---------- */
-.top {
-  border-bottom: 1px solid var(--rule);
-}
-.top .wrap {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  padding-block: 18px;
-  flex-wrap: wrap;
-}
-.mark {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-  text-decoration: none;
-  margin-right: auto;
-}
-.mark b {
-  font-family: var(--f-display);
-  font-stretch: 125%;
-  font-variation-settings: "wdth" 125;
-  font-weight: 900;
-  font-size: 1.5rem;
-  letter-spacing: -0.02em;
-}
-.mark span { color: var(--ink-2); }
-.nav {
-  display: flex;
-  gap: 22px;
-  flex-wrap: nowrap;
-  min-width: 0;
-  max-width: 100%;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-.nav::-webkit-scrollbar { display: none; }
-.nav a { white-space: nowrap; }
-.nav a { text-decoration: none; padding-block: 4px; border-bottom: 1px solid transparent; }
-.nav a:hover { border-bottom-color: var(--accent); color: var(--accent); }
-.tc {
-  display: none;
-  align-items: center;
-  gap: 8px;
-  color: var(--ink-2);
-  font-variant-numeric: tabular-nums;
-}
-.tc i { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); display: block; }
-@media (min-width: 900px) { .tc { display: flex; } }
-
-/* ---------- hero ---------- */
-.hero { padding-block: clamp(36px, 6vw, 80px) clamp(40px, 5vw, 72px); }
-.hero-grid {
-  display: grid;
-  gap: clamp(32px, 5vw, 64px);
-  align-items: center;
-}
-@media (min-width: 1000px) {
-  .hero-grid { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); }
-}
-.hero-copy { display: flex; flex-direction: column; gap: 24px; min-width: 0; }
-.hero h1 { font-size: var(--t-hero); overflow-wrap: anywhere; }
-.hero h1 em { font-style: normal; color: var(--accent); }
-.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 20px;
-  font-family: var(--f-mono);
-  font-size: var(--t-sm);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  text-decoration: none;
-  border: 1px solid var(--ink);
-  background: transparent;
-  color: var(--ink);
-  cursor: pointer;
-  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease;
-}
-.btn:hover { background: var(--ink); color: var(--paper); }
-.btn.solid { background: var(--band); border-color: var(--band); color: var(--on-band); }
-.btn.solid:hover { transform: translateY(-2px); background: var(--band); color: var(--on-band); }
-
-/* blueprint sheet */
-.blueprint {
-  background-color: var(--band);
-  background-image:
-    linear-gradient(var(--band-grid) 1px, transparent 1px),
-    linear-gradient(90deg, var(--band-grid) 1px, transparent 1px);
-  background-size: 24px 24px;
-  color: var(--on-band);
-  min-width: 0;
-}
-.blueprint svg { display: block; width: 100%; height: auto; }
-.bp-line { fill: none; stroke: var(--on-band); stroke-width: 1.5; }
-.bp-thin { fill: none; stroke: var(--band-line); stroke-width: 1; }
-.bp-ratio {
-  fill: var(--on-band);
-  font-family: var(--f-display);
-  font-stretch: 125%;
-  font-variation-settings: "wdth" 125;
-  font-weight: 800;
-  font-size: 25px;
-}
-.bp-label { fill: var(--on-band); font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.06em; }
-.bp-dim { fill: var(--on-band-2); font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.04em; }
-.titleblock {
-  overflow: hidden;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  border-top: 1px solid var(--band-line);
-}
-@media (min-width: 560px) { .titleblock { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
-.titleblock div {
-  padding: 10px 14px;
-  border-right: 1px solid var(--band-line);
-  border-bottom: 1px solid var(--band-line);
-  margin: 0 -1px -1px 0;
-  min-width: 0;
-}
-.titleblock dt, .tb-k { color: var(--on-band-2); display: block; font-size: 0.6875rem; }
-.tb-v { display: block; font-size: var(--t-xs); letter-spacing: 0.04em; }
-
-/* markets line */
-.markets {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 28px;
-  padding-block: 18px;
-  border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
-  color: var(--ink-2);
-}
-.markets b { color: var(--ink); font-weight: 500; }
-
-/* ---------- sections ---------- */
-.section { padding-block: var(--section); }
-.section-head {
-  display: grid;
-  gap: 14px;
-  margin-bottom: clamp(28px, 4vw, 52px);
-  max-width: 46rem;
-}
-.section-head h2 { font-size: var(--t-xl); }
-
-/* schedule of capabilities */
-.schedule { border-top: 2px solid var(--ink); }
-.row {
-  display: grid;
-  gap: 6px 32px;
-  padding-block: 22px;
-  border-bottom: 1px solid var(--rule);
-  align-items: baseline;
-}
-@media (min-width: 820px) {
-  .row { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr) minmax(0, 0.8fr); }
-}
-.row h3 {
-  font-family: var(--f-display);
-  font-stretch: 125%;
-  font-variation-settings: "wdth" 125;
-  font-weight: 700;
-  font-size: var(--t-lg);
-  letter-spacing: -0.01em;
-}
-.row p { max-width: 38em; min-width: 0; }
-.row .spec { color: var(--ink-2); }
-.row-head { padding-block: 10px; color: var(--ink-2); display: none; }
-@media (min-width: 820px) { .row-head { display: grid; } }
-
-/* work slates */
-.slates { display: grid; gap: 20px; }
-@media (min-width: 780px) { .slates { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-.slate {
-  background: var(--sheet);
-  border: 1px solid var(--ink);
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-}
-.sticks {
-  height: 18px;
-  background: repeating-linear-gradient(-55deg, var(--ink) 0 22px, var(--sheet) 22px 44px);
-  border-bottom: 1px solid var(--ink);
-}
-.slate dl {
-  overflow: hidden;
-  margin: 0;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  border-bottom: 1px solid var(--ink);
-}
-.slate dl div { padding: 10px 16px; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); margin: 0 -1px -1px 0; min-width: 0; }
-.slate dt { color: var(--ink-2); font-size: 0.6875rem; }
-.slate dd { margin: 2px 0 0; font-size: var(--t-xs); letter-spacing: 0.04em; }
-.slate-body { padding: 22px 16px 26px; display: grid; gap: 10px; }
-.slate-body h3 {
-  font-family: var(--f-display);
-  font-stretch: 125%;
-  font-variation-settings: "wdth" 125;
-  font-weight: 800;
-  font-size: 1.5rem;
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-}
-.slate-body p { color: var(--ink-2); max-width: 36em; }
-.also { margin-top: 28px; display: grid; gap: 6px; max-width: 46rem; }
-
-/* process */
-.steps {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  border-top: 2px solid var(--ink);
-}
-.steps li {
-  display: grid;
-  grid-template-columns: 3.2rem minmax(0, 1fr);
-  gap: 4px 16px;
-  padding-block: 20px;
-  border-bottom: 1px solid var(--rule);
-  min-width: 0;
-}
-.steps .n { color: var(--accent); font-size: var(--t-sm); padding-top: 4px; }
-.steps h3 { font-family: var(--f-display); font-stretch: 125%; font-variation-settings: "wdth" 125; font-weight: 700; font-size: var(--t-lg); }
-.steps p { grid-column: 2; color: var(--ink-2); max-width: 40em; }
-@media (min-width: 1040px) {
-  .steps { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0 24px; }
-  .steps li { grid-template-columns: minmax(0, 1fr); border-bottom: 0; align-content: start; gap: 8px; }
-  .steps p { grid-column: 1; }
-}
-
-/* agencies band */
-.band {
-  background-color: var(--band);
-  background-image:
-    linear-gradient(var(--band-grid) 1px, transparent 1px),
-    linear-gradient(90deg, var(--band-grid) 1px, transparent 1px);
-  background-size: 24px 24px;
-  color: var(--on-band);
-}
-.band .eyebrow { color: var(--on-band-2); }
-.band h2 { font-size: var(--t-xl); }
-.band-grid { display: grid; gap: clamp(28px, 4vw, 56px); }
-@media (min-width: 900px) { .band-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); align-items: start; } }
-.band-lead { display: grid; gap: 16px; }
-.band-lead .band-say { color: var(--on-band-2); font-size: var(--t-lg); line-height: 1.45; max-width: 30em; }
-.terms { margin: 0; display: grid; border-top: 1px solid var(--band-line); }
-.terms div { padding-block: 18px; border-bottom: 1px solid var(--band-line); display: grid; gap: 4px; }
-.terms dt { font-weight: 600; font-size: var(--t-lg); }
-.terms dd { margin: 0; color: var(--on-band-2); max-width: 38em; }
-
-/* rates */
-.rates { display: grid; gap: clamp(24px, 4vw, 56px); }
-@media (min-width: 900px) { .rates { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
-.rates p + p { margin-top: 14px; }
-.menu { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--ink); }
-.menu li {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  padding-block: 12px;
-  border-bottom: 1px solid var(--rule);
-  font-size: var(--t-sm);
-  letter-spacing: 0.04em;
-}
-.menu li span:last-child { color: var(--ink-2); text-align: right; }
-
-/* contact */
-.contact { padding-block: var(--section); border-top: 1px solid var(--rule); }
-.contact-grid { display: grid; gap: clamp(28px, 4vw, 56px); align-items: end; }
-@media (min-width: 900px) { .contact-grid { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); } }
-.contact h2 { font-size: var(--t-hero); }
-.contact-copy { display: grid; gap: 20px; }
-.mail {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px 16px;
-}
-.mail a {
-  font-family: var(--f-display);
-  font-stretch: 125%;
-  font-variation-settings: "wdth" 125;
-  font-weight: 700;
-  font-size: clamp(1.25rem, 2vw + 0.8rem, 1.9rem);
-  text-decoration-color: var(--accent);
-  text-underline-offset: 6px;
-  overflow-wrap: anywhere;
-  user-select: all;
-}
-.btn.small { padding: 9px 14px; font-size: var(--t-xs); }
-
-/* footer title block */
-.foot { border-top: 2px solid var(--ink); overflow: hidden; }
-.foot-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.foot-grid div:first-child { grid-column: 1 / -1; }
-@media (min-width: 820px) {
-  .foot-grid { grid-template-columns: 1.4fr 1fr 1fr; }
-  .foot-grid div:first-child { grid-column: auto; }
-}
-.foot-grid div { padding: 16px var(--gutter); border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); margin: 0 -1px -1px 0; min-width: 0; }
-.foot-grid .k { color: var(--ink-2); display: block; font-size: 0.6875rem; }
-.foot-grid .v { display: block; font-size: var(--t-xs); letter-spacing: 0.04em; }
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .btn { transition: none; }
-  .btn.solid:hover { transform: none; }
-}
-</style>
+<link rel="stylesheet" href="site.css">
 </head>
-<body>
+<body data-page="home">
+<a class="skip mono" href="#top">Skip to content</a>
 <header class="top">
   <div class="wrap">
-    <a class="mark" href="#top" aria-label="NHAUS MEDIA, home">
+    <a class="mark" href="./" aria-label="NHAUS, home">
       <b>NHAUS</b><span class="mono">Media</span>
     </a>
-    <nav class="nav mono" aria-label="Sections">
-      <a href="#capabilities">Capabilities</a>
-      <a href="#work">Work</a>
-      <a href="#process">Process</a>
-      <a href="#agencies">Agencies</a>
-      <a href="#rates">Rates</a>
-      <a href="#contact">Contact</a>
+    <nav class="nav mono" aria-label="Primary">
+      <a href="business-cma/">Business CMA</a>
+      <a href="production-studio/">Production Studio</a>
+      <a href="work/">Our Work</a>
+      <a href="contact/">Contact</a>
     </nav>
     <div class="tc mono" aria-hidden="true"><i></i><span id="timecode">00:00:00:00</span><span>24 fps</span></div>
   </div>
@@ -460,306 +37,153 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <p class="mono eyebrow">AI-native production studio</p>
-        <h1 class="display">Brief in. <em>Broadcast-ready</em> out.</h1>
-        <p class="lede">NHAUS MEDIA makes films, key visuals, social content and episodic series for agencies and brands. The same rigor applies to a six-second cutdown and a sixty-second TVC.</p>
+        <p class="mono eyebrow">Business CMA · Comparative market analysis</p>
+        <h1 class="display">Find where your business is losing customers. See how you compare. <em>Fix what matters.</em></h1>
+        <p class="lede">The Business CMA compares what customers can see of your business with your direct local competitors, then names the three actions most worth taking. A person reviews every report.</p>
         <div class="actions">
-          <a class="btn solid" href="#contact">Start a project</a>
-          <a class="btn" href="#work">See the work</a>
+          <a class="btn solid" href="business-cma/">Get your Business CMA</a>
+          <a class="btn" href="production-studio/">Explore Production Studio</a>
         </div>
       </div>
 
       <figure class="blueprint" style="margin:0">
         <svg viewBox="0 0 512 450" role="img" aria-labelledby="bp-title bp-desc">
-          <title id="bp-title">Delivery formats, drawn to scale</title>
-          <desc id="bp-desc">Four frames at 1 to 8 scale: 16 by 9 for film and TVC, 9 by 16 for vertical series and social, 1 by 1 for key visuals, and 4 by 5 for feed. A runtime ruler below marks 6, 15, 30 and 60 seconds.</desc>
+          <title id="bp-title">How a comparison is drawn</title>
+          <desc id="bp-desc">An illustration of the report layout, not client data. Five rows, one each for discovery, trust, offer, conversion and proof. Each row shows the range of comparable businesses, their median, and a marker for your business.</desc>
 
-          <!-- dimension line above the 16:9 frame -->
-          <path class="bp-thin" d="M30 26 H270 M30 21 V31 M270 21 V31"/>
-          <text class="bp-dim" x="150" y="19" text-anchor="middle">1920</text>
-          <!-- dimension line right of the 9:16 frame -->
-          <path class="bp-thin" d="M482 40 V280 M477 40 H487 M477 280 H487"/>
-          <text class="bp-dim" x="0" y="0" text-anchor="middle" transform="translate(494 160) rotate(90)">1920</text>
+          <path class="bp-thin" d="M30 26 H482 M30 21 V31 M482 21 V31"/>
+          <text class="bp-dim" x="30" y="16">BEHIND PEERS</text>
+          <text class="bp-dim" x="482" y="16" text-anchor="end">AHEAD OF PEERS</text>
 
-          <!-- 16:9 -->
-          <rect class="bp-line" x="30" y="40" width="240" height="135"/>
-          <text class="bp-ratio" x="44" y="76">16:9</text>
-          <text class="bp-label" x="44" y="98">FILM / TVC</text>
-          <text class="bp-dim" x="44" y="161">1920 × 1080</text>
+          <text class="bp-label" x="30" y="62">DISCOVERY</text>
+          <path class="bp-thin" d="M30 80 H482"/>
+          <path class="bp-line" d="M150 80 H400 M290 72 V88"/>
+          <circle class="bp-dot" cx="340" cy="80" r="6"/>
 
-          <!-- 9:16 -->
-          <rect class="bp-line" x="330" y="40" width="135" height="240"/>
-          <text class="bp-ratio" x="344" y="76">9:16</text>
-          <text class="bp-label" x="344" y="98">SERIES</text>
-          <text class="bp-label" x="344" y="114">SOCIAL</text>
-          <text class="bp-dim" x="344" y="266">1080 × 1920</text>
+          <text class="bp-label" x="30" y="122">TRUST</text>
+          <path class="bp-thin" d="M30 140 H482"/>
+          <path class="bp-line" d="M120 140 H430 M300 132 V148"/>
+          <circle class="bp-dot" cx="210" cy="140" r="6"/>
 
-          <!-- 1:1 -->
-          <rect class="bp-line" x="30" y="190" width="135" height="135"/>
-          <text class="bp-ratio" x="44" y="226">1:1</text>
-          <text class="bp-label" x="44" y="248">KEY VISUAL</text>
-          <text class="bp-dim" x="44" y="311">1080 × 1080</text>
+          <text class="bp-label" x="30" y="182">OFFER</text>
+          <path class="bp-thin" d="M30 200 H482"/>
+          <path class="bp-line" d="M180 200 H380 M270 192 V208"/>
+          <circle class="bp-dot" cx="310" cy="200" r="6"/>
 
-          <!-- 4:5 -->
-          <rect class="bp-line" x="180" y="190" width="135" height="168.75"/>
-          <text class="bp-ratio" x="194" y="226">4:5</text>
-          <text class="bp-label" x="194" y="248">FEED</text>
-          <text class="bp-dim" x="194" y="344">1080 × 1350</text>
+          <text class="bp-label" x="30" y="242">CONVERSION</text>
+          <path class="bp-thin" d="M30 260 H482"/>
+          <path class="bp-line" d="M100 260 H420 M310 252 V268"/>
+          <circle class="bp-dot" cx="150" cy="260" r="6"/>
 
-          <!-- legend -->
-          <text class="bp-dim" x="330" y="312">ALL FRAMES 1:8</text>
-          <text class="bp-dim" x="330" y="328">UNITS: PIXELS</text>
+          <text class="bp-label" x="30" y="302">PROOF</text>
+          <path class="bp-thin" d="M30 320 H482"/>
+          <path class="bp-line" d="M200 320 H450 M330 312 V328"/>
+          <circle class="bp-dot" cx="390" cy="320" r="6"/>
 
-          <!-- runtime ruler: 60 s across 435 units -->
-          <path class="bp-line" d="M30 404 H465"/>
-          <path class="bp-line" d="M30 394 V414 M73.5 397 V411 M138.75 397 V411 M247.5 397 V411 M465 394 V414"/>
-          <text class="bp-dim" x="30" y="384">RUNTIME</text>
-          <text class="bp-label" x="73.5" y="432" text-anchor="middle">:06</text>
-          <text class="bp-label" x="138.75" y="432" text-anchor="middle">:15</text>
-          <text class="bp-label" x="247.5" y="432" text-anchor="middle">:30</text>
-          <text class="bp-label" x="465" y="432" text-anchor="end">:60</text>
+          <circle class="bp-dot" cx="36" cy="372" r="6"/>
+          <text class="bp-label" x="52" y="376">YOUR BUSINESS</text>
+          <path class="bp-line" d="M36 392 V408"/>
+          <text class="bp-label" x="52" y="404">PEER MEDIAN</text>
+          <path class="bp-line" d="M250 372 H290"/>
+          <text class="bp-label" x="302" y="376">PEER RANGE</text>
+          <text class="bp-dim" x="250" y="404">ILLUSTRATION · NOT CLIENT DATA</text>
         </svg>
         <figcaption class="titleblock mono">
-          <div><span class="tb-k">Sheet</span><span class="tb-v">A-01</span></div>
-          <div><span class="tb-k">Title</span><span class="tb-v">Delivery formats</span></div>
-          <div><span class="tb-k">Scale</span><span class="tb-v">1 : 8</span></div>
-          <div><span class="tb-k">Drawn</span><span class="tb-v">NHAUS MEDIA</span></div>
+          <div><span class="tb-k">Sheet</span><span class="tb-v">B-01</span></div>
+          <div><span class="tb-k">Title</span><span class="tb-v">Comparison layout</span></div>
+          <div><span class="tb-k">Status</span><span class="tb-v">Illustrative</span></div>
+          <div><span class="tb-k">Drawn</span><span class="tb-v">NHAUS</span></div>
         </figcaption>
       </figure>
     </div>
   </section>
 
-  <div class="wrap">
-    <p class="markets mono">
-      <span>Studio <b>San Francisco Bay Area</b></span>
-      <span>Markets served <b>Philippines · Singapore · Thailand · United States</b></span>
-    </p>
-  </div>
-
-  <section class="section" id="capabilities">
+  <section class="section" id="business-cma">
     <div class="wrap">
       <div class="section-head">
-        <p class="mono eyebrow">Capabilities</p>
-        <h2 class="display">One house, seven rooms.</h2>
-        <p class="muted">Order any line on its own or combine them into a campaign. Every line is priced per unit on the rate card.</p>
+        <p class="mono eyebrow">Business CMA</p>
+        <h2 class="display">Three questions, answered with evidence.</h2>
+        <p class="muted">Built for owner-operated local service businesses. Each finding links to what was observed and when.</p>
       </div>
 
       <div class="schedule">
-        <div class="row row-head mono" aria-hidden="true"><span>Room</span><span>What we make</span><span>Formats</span></div>
         <div class="row">
-          <h3>Films</h3>
-          <p>TVCs, brand and manifesto films, explainers, and app onboarding films.</p>
-          <p class="mono spec">:06 to :60+ · 16:9, 9:16</p>
+          <h3>Find</h3>
+          <p>Where a customer looking for your service runs into friction: finding you, trusting you, understanding the offer, or getting in touch.</p>
+          <p class="mono spec">Observed, not assumed</p>
         </div>
         <div class="row">
-          <h3>Key visuals</h3>
-          <p>Campaign key visuals from concept to final art, extended to every placement.</p>
-          <p class="mono spec">Print and digital</p>
+          <h3>Compare</h3>
+          <p>How you stand beside five to ten businesses competing for the same customer, measure by measure, with the raw values shown.</p>
+          <p class="mono spec">Direct competitors only</p>
         </div>
         <div class="row">
-          <h3>Series</h3>
-          <p>Episodic vertical drama, produced per episode with a pilot first.</p>
-          <p class="mono spec">9:16 · Per episode</p>
+          <h3>Fix</h3>
+          <p>The three actions most worth taking, in order. Do them yourself, use another provider, or ask NHAUS for a scoped repair.</p>
+          <p class="mono spec">Three actions, ranked</p>
         </div>
-        <div class="row">
-          <h3>Social</h3>
-          <p>Cutdowns, platform adaptations and short-form runs built from the master.</p>
-          <p class="mono spec">9:16, 1:1, 4:5</p>
-        </div>
-        <div class="row">
-          <h3>Scene generation</h3>
-          <p>Characters, environments and shots generated to your board. The same character holds in every cut and every market.</p>
-          <p class="mono spec">Per scene</p>
-        </div>
-        <div class="row">
-          <h3>Post</h3>
-          <p>Edit, grade, sound, voiceover and finishing.</p>
-          <p class="mono spec">Masters in every ratio</p>
-        </div>
-        <div class="row">
-          <h3>Live action and hybrid</h3>
-          <p>A crew and a camera when the brief needs one. Shoot stills and footage extended with AI.</p>
-          <p class="mono spec">On location</p>
-        </div>
+      </div>
+
+      <div class="actions" style="margin-top:28px">
+        <a class="btn" href="business-cma/">How the Business CMA works</a>
       </div>
     </div>
   </section>
 
-  <section class="section" id="work" style="padding-top:0">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="mono eyebrow">Selected work</p>
-        <h2 class="display">Shown without names.</h2>
-        <p class="muted">Much of our work ships under an agency's or a brand's name, so projects are listed by category. The reel and full case studies are available on request.</p>
-      </div>
-
-      <div class="slates">
-        <article class="slate">
-          <div class="sticks" aria-hidden="true"></div>
-          <dl class="mono">
-            <div><dt>Prod.</dt><dd>Manifesto film</dd></div>
-            <div><dt>Client</dt><dd>Beauty brand, via agency</dd></div>
-            <div><dt>Market</dt><dd>Philippines</dd></div>
-            <div><dt>Agency</dt><dd>Singapore</dd></div>
-          </dl>
-          <div class="slate-body">
-            <h3>One protagonist, one day, and no frame that reads as AI.</h3>
-            <p>The brief ruled out anything that looked generated. We proved the look with a ten-second sample, then produced the full film to the agency's boards and brand guide.</p>
-          </div>
-        </article>
-
-        <article class="slate">
-          <div class="sticks" aria-hidden="true"></div>
-          <dl class="mono">
-            <div><dt>Prod.</dt><dd>Original series</dd></div>
-            <div><dt>Client</dt><dd>In-house original</dd></div>
-            <div><dt>Market</dt><dd>Filipino diaspora</dd></div>
-            <div><dt>Format</dt><dd>9:16 episodic</dd></div>
-          </dl>
-          <div class="slate-body">
-            <h3>Vertical drama, episode after episode.</h3>
-            <p>An AI-native drama series made for phones. Characters, sets and Tagalog lip-sync hold from one episode to the next.</p>
-          </div>
-        </article>
-
-        <article class="slate">
-          <div class="sticks" aria-hidden="true"></div>
-          <dl class="mono">
-            <div><dt>Prod.</dt><dd>Event film</dd></div>
-            <div><dt>Client</dt><dd>Football legends festival</dd></div>
-            <div><dt>Market</dt><dd>Thailand</dd></div>
-            <div><dt>Format</dt><dd>16:9 master</dd></div>
-          </dl>
-          <div class="slate-body">
-            <h3>A festival film for a Bangkok client.</h3>
-            <p>An AI-produced film promoting a legends football festival, revised with the client through to delivery.</p>
-          </div>
-        </article>
-
-        <article class="slate">
-          <div class="sticks" aria-hidden="true"></div>
-          <dl class="mono">
-            <div><dt>Prod.</dt><dd>Intro film</dd></div>
-            <div><dt>Client</dt><dd>Recovery app</dd></div>
-            <div><dt>Market</dt><dd>United States</dd></div>
-            <div><dt>Runtime</dt><dd>About :80</dd></div>
-          </dl>
-          <div class="slate-body">
-            <h3>Eighty seconds to introduce a workers' recovery app.</h3>
-            <p>A cinematic explainer with minimal voiceover. The client's own app screens are animated into the story of people getting back to everyday life.</p>
-          </div>
-        </article>
-      </div>
-
-      <div class="also">
-        <p class="mono muted">Also in the reel</p>
-        <p>A fashion designer's campaign film, content for a food and beverage brand, and product visuals for a direct-to-consumer cookie brand.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="process" style="padding-top:0">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="mono eyebrow">Process</p>
-        <h2 class="display">Approve ten seconds before we make sixty.</h2>
-        <p class="muted">AI generation is not repeatable by default. The process is built so that you see and sign off the look before production volume begins.</p>
-      </div>
-
-      <ol class="steps">
-        <li>
-          <span class="mono n">01</span>
-          <h3>Brief</h3>
-          <p>Send a brief, a board, or a handful of phone photos. We work from whatever you have.</p>
-        </li>
-        <li>
-          <span class="mono n">02</span>
-          <h3>Alignment</h3>
-          <p>Character sheets, storyboards and look references, agreed before anything is generated.</p>
-        </li>
-        <li>
-          <span class="mono n">03</span>
-          <h3>Sample</h3>
-          <p>A ten-second sample in the final look. You approve it, or we adjust it.</p>
-        </li>
-        <li>
-          <span class="mono n">04</span>
-          <h3>Production</h3>
-          <p>Generation, a shoot where the brief needs one, then edit, grade and sound.</p>
-        </li>
-        <li>
-          <span class="mono n">05</span>
-          <h3>Delivery</h3>
-          <p>Masters in every ratio, with a record of how each asset was made and the usage rights that apply.</p>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="section band" id="agencies">
+  <section class="section band" id="production-studio">
     <div class="wrap band-grid">
       <div class="band-lead">
-        <p class="mono eyebrow">For agencies</p>
-        <h2 class="display">Your agency's AI production company.</h2>
-        <p class="band-say">You keep the client and the creative lead. We produce behind your name and give your team what it needs to present the work up the chain.</p>
+        <p class="mono eyebrow">Production Studio</p>
+        <h2 class="display">Films, key visuals and series, made to brief.</h2>
+        <p class="band-say">The studio makes films, key visuals, social content and episodic series for agencies and brands. Commission it directly. You do not need a Business CMA to work with us.</p>
+        <div class="actions">
+          <a class="btn" href="production-studio/">Explore Production Studio</a>
+        </div>
       </div>
       <dl class="terms">
-        <div>
-          <dt>Boards you can present</dt>
-          <dd>Character development sheets and storyboards built for your client meeting, before production starts.</dd>
+        <div id="capabilities">
+          <dt><a class="link" href="production-studio/#capabilities">Capabilities</a></dt>
+          <dd>Films, key visuals, series, social, scene generation, post, and live action.</dd>
         </div>
-        <div>
-          <dt>A rate card you can quote</dt>
-          <dd>Per-unit prices for each deliverable, so you can scope a campaign without waiting on an estimate.</dd>
+        <div id="process">
+          <dt><a class="link" href="production-studio/#process">Process</a></dt>
+          <dd>You approve a ten-second sample in the final look before production volume begins.</dd>
         </div>
-        <div>
-          <dt>No surprise line items</dt>
-          <dd>Revision rounds and the types of change they cover are written into the scope before we begin.</dd>
+        <div id="agencies">
+          <dt><a class="link" href="production-studio/#agencies">For agencies</a></dt>
+          <dd>You keep the client and the creative lead. We produce behind your name.</dd>
         </div>
-        <div>
-          <dt>Traceable output</dt>
-          <dd>Each delivery records how its assets were made, which keeps legal and brand review straightforward.</dd>
+        <div id="rates">
+          <dt><a class="link" href="production-studio/#rates">Rates</a></dt>
+          <dd>One menu priced in three tiers. Ask for the rate card.</dd>
         </div>
       </dl>
     </div>
   </section>
 
-  <section class="section" id="rates">
+  <section class="section" id="work">
     <div class="wrap">
       <div class="section-head">
-        <p class="mono eyebrow">Rates</p>
-        <h2 class="display">One menu, three tiers.</h2>
+        <p class="mono eyebrow">Our work</p>
+        <h2 class="display">Production work, shown without names.</h2>
+        <p class="muted">Films and campaigns the Production Studio has made for agencies and brands. These are production projects, not Business CMA results.</p>
       </div>
-      <div class="rates">
-        <div>
-          <p class="lede">The same menu is priced for a small brand, a mid-size campaign and a big agency campaign.</p>
-          <p class="muted">Pick lines one at a time or as a package. Usage rights are priced separately, so you pay for the reach you need. Ask for the rate card and we will send the tier that fits your project.</p>
-          <div class="actions" style="margin-top:22px">
-            <a class="btn" href="#contact">Request the rate card</a>
-          </div>
-        </div>
-        <ul class="menu mono">
-          <li><span>AI key visual</span><span>Per visual</span></li>
-          <li><span>TVC and film</span><span>:06 to :60</span></li>
-          <li><span>Scene generation</span><span>Per scene</span></li>
-          <li><span>Character consistency</span><span>Per character</span></li>
-          <li><span>Post-production</span><span>Per film</span></li>
-          <li><span>Social adaptation</span><span>Per cut</span></li>
-          <li><span>Usage rights</span><span>By reach and term</span></li>
-        </ul>
+      <div class="actions">
+        <a class="btn" href="work/">See our work</a>
       </div>
     </div>
   </section>
 
   <section class="contact" id="contact">
     <div class="wrap contact-grid">
-      <h2 class="display">Send the brief.</h2>
+      <h2 class="display">Talk to us.</h2>
       <div class="contact-copy">
-        <p class="lede">A brief, a board or a rough idea is enough to start. We reply with a scope, a rate and a plan for the sample.</p>
+        <p class="lede">Ask about a Business CMA or send a production brief. Both reach the same inbox.</p>
         <div class="mail">
           <a id="email-link" href="mailto:hello@n-haus.com">hello@n-haus.com</a>
           <button class="btn small" type="button" id="copy-email">Copy address</button>
         </div>
+        <p><a class="link" href="contact/">More ways to start</a></p>
       </div>
     </div>
   </section>
@@ -773,52 +197,6 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
   </div>
 </footer>
 
-<script>
-(function () {
-  // Running timecode at 24 fps, counted from page load.
-  var tc = document.getElementById('timecode');
-  var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function pad(n) { return (n < 10 ? '0' : '') + n; }
-  if (tc && !still && window.requestAnimationFrame) {
-    var start = performance.now();
-    var last = -1;
-    (function tick(now) {
-      var frames = Math.floor(((now - start) / 1000) * 24);
-      if (frames !== last) {
-        last = frames;
-        var f = frames % 24;
-        var s = Math.floor(frames / 24);
-        tc.textContent = pad(Math.floor(s / 3600) % 24) + ':' + pad(Math.floor(s / 60) % 60) + ':' + pad(s % 60) + ':' + pad(f);
-      }
-      requestAnimationFrame(tick);
-    })(start);
-  }
-
-  // Copy the email address, with a select-the-text fallback.
-  var btn = document.getElementById('copy-email');
-  var link = document.getElementById('email-link');
-  if (btn && link) {
-    btn.addEventListener('click', function () {
-      var address = link.textContent.trim();
-      function selectIt() {
-        var range = document.createRange();
-        range.selectNodeContents(link);
-        var sel = window.getSelection();
-        sel.removeAllRanges();
-        sel.addRange(range);
-        btn.textContent = 'Selected';
-      }
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(address).then(function () {
-          btn.textContent = 'Copied';
-        }, selectIt);
-      } else {
-        selectIt();
-      }
-      setTimeout(function () { btn.textContent = 'Copy address'; }, 2200);
-    });
-  }
-})();
-</script>
+<script src="site.js"></script>
 </body>
 </html>
