@@ -461,3 +461,4 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
 .path p { color: var(--ink-2); }
 .band .btn { border-color: var(--on-band); color: var(--on-band); }
 .band .btn:hover { background: var(--on-band); color: var(--band); }
+.band :focus-visible { outline-color: var(--on-band); }
